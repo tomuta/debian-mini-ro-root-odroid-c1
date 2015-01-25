@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+set -e
+
+# resolv.conf needs to live in /tmp, but we still need /etc/resolv.conf as well
+rm /etc/resolv.conf
+ln -s /tmp/resolv.conf /etc/resolv.conf
+

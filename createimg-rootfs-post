@@ -9,3 +9,8 @@
 # and /tmp are not copied to the mounted partition.
 #
 
+set -e
+
+# /var/log will be mounted on a ramfs
+rm -rf $1/var/log/*
+
