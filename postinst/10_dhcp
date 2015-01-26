@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+set -e
+
+# /var/lib/dhcp will be a symlink to /tmp
+rm -rf /var/lib/dhcp
+ln -s /tmp/var/lib/dhcp /var/lib/dhcp
+

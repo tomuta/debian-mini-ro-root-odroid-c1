@@ -58,10 +58,3 @@ rm /usr/sbin/policy-rc.d
 # Cleanup
 apt-get clean
 
-# Make apt-get remount /
-echo "DPkg {
-	Pre-Invoke { \"mount -n -o remount,rw /\"; };
-	Post-Invoke { \"test ${NO_APT_REMOUNT:-no} = yes || mount -n -o remount,ro / || true\"; };
-};
-" > /etc/apt/apt.conf.d/00autoremount
-
