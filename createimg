@@ -99,7 +99,7 @@ second_part_start_sector=$first_part_end_sector
 second_part_end_sector=$(($cylinders*$sectors_per_cylinder))
 
 # Partition the disk
-sfdisk --unit S --in-order --no-reread $outfile  <<EOF
+sfdisk --no-reread $outfile  <<EOF
 $first_part_start_sector,$(($first_part_end_sector-$first_part_start_sector)),0x0C,*
 $second_part_start_sector,$(($second_part_end_sector-$second_part_start_sector)),L
 EOF
