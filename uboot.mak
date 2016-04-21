@@ -17,7 +17,7 @@ distclean:
 
 $(UBOOT_TC_DIR): $(UBOOT_TOOLCHAIN)
 	mkdir -p $@
-	tar xJf $(UBOOT_TOOLCHAIN) -C $@
+	tar --no-same-owner -xJf $(UBOOT_TOOLCHAIN) -C $@
 	touch $@
 
 $(UBOOT_TOOLCHAIN):
