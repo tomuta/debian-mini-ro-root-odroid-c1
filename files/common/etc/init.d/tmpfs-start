@@ -5,6 +5,7 @@
 # Required-Stop:
 # Default-Start:     S
 # Default-Stop:
+# X-Start-Before:    networking
 # Short-Description: Populates /tmp after bootup.
 ### END INIT INFO
 
@@ -13,7 +14,7 @@
 case "$1" in
     start)
     log_action_begin_msg "Initializing /tmp"
-    mkdir -p /tmp/var/log
+    mkdir -p /tmp/udev-rules.d
     mkdir -p /tmp/var/lib/dhcp
     log_action_end_msg 0
     ;;
